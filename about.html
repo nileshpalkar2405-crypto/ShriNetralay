@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Shri Netralay Eye Care Center</title>
+    <link rel="icon" type="image/x-icon" href="https://i.ibb.co/kV5yYCMW/Logo-1.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a73e8;
+            --primary-dark: #0d47a1;
+            --secondary: #f8f9fa;
+            --accent: #34a853;
+            --text: #333333;
+            --text-light: #666666;
+            --white: #ffffff;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            line-height: 1.6;
+            background-color: var(--white);
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 60px;
+            width: auto;
+        }
+
+        .clinic-name {
+            margin-left: 15px;
+        }
+
+        .clinic-name h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            margin-bottom: 4px;
+        }
+
+        .clinic-name p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-menu li {
+            margin-left: 30px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary);
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--text);
+        }
+
+        /* Page Header */
+        .page-header {
+            padding: 60px 0 40px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: var(--white);
+            text-align: center;
+        }
+
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .page-subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* About Content */
+        .about-content {
+            padding: 60px 0;
+            background-color: var(--white);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+        }
+
+        .founder-section {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 50px;
+        }
+
+        .founder-image {
+            flex: 0 0 300px;
+        }
+
+        .founder-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+
+        .founder-info {
+            flex: 1;
+        }
+
+        .founder-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+        }
+
+        .founder-description {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        .highlight-box {
+            background-color: var(--secondary);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--accent);
+        }
+
+        .highlight-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+        }
+
+        .highlight-content {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        .motto-section, .address-section {
+            margin-bottom: 50px;
+        }
+
+        /* Values Section */
+        .values-section {
+            padding: 60px 0;
+            background-color: var(--secondary);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .value-card {
+            background-color: var(--white);
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .value-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .value-icon img {
+            width: 35px;
+            height: 35px;
+            filter: brightness(0) invert(1);
+        }
+
+        .value-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+        }
+
+        .value-description {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--white);
+            padding: 40px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent);
+        }
+
+        .footer-section p {
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            opacity: 0.9;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Mobile Navigation */
+        .mobile-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--white);
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+            display: none;
+            z-index: 1000;
+        }
+
+        .mobile-nav-menu {
+            display: flex;
+            list-style: none;
+            justify-content: space-around;
+            padding: 10px 0;
+        }
+
+        .mobile-nav-item {
+            text-align: center;
+        }
+
+        .mobile-nav-link {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: var(--text-light);
+            font-size: 0.8rem;
+            transition: var(--transition);
+        }
+
+        .mobile-nav-link.active,
+        .mobile-nav-link:hover {
+            color: var(--primary);
+        }
+
+        .mobile-nav-icon {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .page-title {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .founder-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .founder-image {
+                flex: 0 0 auto;
+                max-width: 300px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 10px 0;
+            }
+            
+            .logo img {
+                height: 50px;
+            }
+            
+            .clinic-name h1 {
+                font-size: 1.2rem;
+            }
+            
+            .nav-menu {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .mobile-nav {
+                display: block;
+            }
+            
+            .page-header {
+                padding: 40px 0 30px;
+            }
+            
+            .about-content, .values-section {
+                padding: 40px 0;
+            }
+            
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                padding: 0 15px;
+            }
+            
+            .page-title {
+                font-size: 1.8rem;
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+            }
+            
+            .clinic-name {
+                margin-left: 10px;
+            }
+            
+            .clinic-name h1 {
+                font-size: 1rem;
+            }
+            
+            .clinic-name p {
+                font-size: 0.8rem;
+            }
+            
+            .highlight-box {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="https://i.ibb.co/kV5yYCMW/Logo-1.png" alt="Shri Netralay Logo">
+                <div class="clinic-name">
+                    <h1>Shri Netralay</h1>
+                    <p>Vishal Eye Care Center, Jafrabad</p>
+                </div>
+            </div>
+            <nav class="desktop-nav">
+                <ul class="nav-menu">
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="products.html">PRODUCTS</a></li>
+                    <li><a href="about.html" class="active">ABOUT</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">About Shri Netralay</h1>
+            <p class="page-subtitle">Committed to providing exceptional eye care with compassion and expertise</p>
+        </div>
+    </section>
+
+    <!-- About Content -->
+    <section class="about-content">
+        <div class="container">
+            <!-- Founder Section -->
+            <div class="founder-section">
+                <div class="founder-image">
+                    <img src="https://i.ibb.co/rR9yxHbj/Founder.png" alt="Founder - Shri Netralay">
+                </div>
+                <div class="founder-info">
+                    <h2 class="section-title">Our Founder</h2>
+                    <h3 class="founder-name">Vivek Palkatr</h3>
+                    <div class="founder-description">
+                        <p>Vivek Palkar is an experienced professional with an extensive background in <b>spectacle manufacturing, optical services,with BSc in Optometry and modern eye-care solutions</b>.</p>
+                        <p>With deep knowledge, years of hands-on experience, and a passion for helping people regain clear vision, our founder ensures that every patient receives the <b>best care, honest guidance, and high-quality treatment</b>.</p>
+                        <p>Their dedication towards providing affordable and accessible eye-care services has helped countless patients achieve better vision and confidence.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Our Mission -->
+            <div class="highlight-box">
+                <h3 class="highlight-title">Our Mission</h3>
+                <div class="highlight-content">
+                    <p>At Shri Netralay, our mission is to provide comprehensive, compassionate, and cutting-edge eye care services that improve and preserve the vision of our community. We strive to make quality eye care accessible to everyone, regardless of their background or financial situation.</p>
+                </div>
+            </div>
+
+            <!-- Our Motto -->
+            <div class="motto-section">
+                <h2 class="section-title">Our Motto</h2>
+                <div class="highlight-box">
+                    <div class="highlight-content">
+                        <p><b>We provide the best eye-care services at affordable rates.</b></p>
+                        <br>
+                        <p><b>मराठी:</b><br>
+                        आम्ही <b>उत्तम नेत्र तपासणी व उपचार</b> अगदी परवडणाऱ्या दरात उपलब्ध करून देतो.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Address -->
+            <div class="address-section">
+                <h2 class="section-title">Our Location</h2>
+                <div class="highlight-box">
+                    <div class="highlight-content">
+                        <p><b>Shri Netralay, Jafrabad</b><br>
+                        Opp. Tahasil Office, Beside Bhosale Medical,<br>
+                        Main Road, Jafrabad<br>
+                        Taluka Jafrabad, District Jalna.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values-section">
+        <div class="container">
+            <h2 class="section-title">Why Choose Us</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Expertise">
+                    </div>
+                    <h3 class="value-title">Expert Care</h3>
+                    <p class="value-description">Our experienced team provides personalized treatment using the latest technology and techniques.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2721/2721273.png" alt="Affordability">
+                    </div>
+                    <h3 class="value-title">Affordable Services</h3>
+                    <p class="value-description">We believe quality eye care should be accessible to everyone at reasonable prices.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <img src="https://cdn-icons-png.flaticon.com/512/2913/2913519.png" alt="Comprehensive">
+                    </div>
+                    <h3 class="value-title">Comprehensive Care</h3>
+                    <p class="value-description">From routine checkups to advanced surgeries, we offer a full spectrum of eye care services.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <img src="https://cdn-icons-png.flaticon.com/512/1006/1006555.png" alt="Patient-Centric">
+                    </div>
+                    <h3 class="value-title">Patient-Centered</h3>
+                    <p class="value-description">Your vision and comfort are our top priorities. We listen and tailor treatments to your needs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Shri Netralay</h3>
+                    <p>Vishal Eye Care Center, Jafrabad</p>
+                    <p>Providing comprehensive eye care services with advanced technology and experienced specialists.</p>
+                    <p>Your vision is our priority.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>Phone: <a href="tel:+918605640476">+91 86056 40476</a></p>
+                    <p>Email: info@shrinetralay.com</p>
+                    <p>Address: Jafrabad, Taluka Jafrabad, District Jalna</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Shri Netralay - Vishal Eye Care Center. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav">
+        <ul class="mobile-nav-menu">
+            <li class="mobile-nav-item">
+                <a href="index.html" class="mobile-nav-link">
+                    <span class="mobile-nav-icon">🏠</span>
+                    <span>Home</span>
+                </a>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="products.html" class="mobile-nav-link">
+                    <span class="mobile-nav-icon">🛍️</span>
+                    <span>Products</span>
+                </a>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="about.html" class="mobile-nav-link active">
+                    <span class="mobile-nav-icon">ℹ️</span>
+                    <span>About</span>
+                </a>
+            </li>
+            <li class="mobile-nav-item">
+                <a href="contact.html" class="mobile-nav-link">
+                    <span class="mobile-nav-icon">📞</span>
+                    <span>Contact</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</body>
+</html>

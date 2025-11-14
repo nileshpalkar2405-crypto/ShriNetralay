@@ -1,0 +1,1000 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Our Products - Shri Netralay Eye Care Center</title>
+<meta name="description" content="Explore premium eye care products at Shri Netralay, Jafrabad's leading eye hospital. Find spectacles, lenses, and eye care accessories in Jalna.">
+<meta name="keywords" content="Shri Netralay, Jafrabad Eye Hospital, Jalna Eye Hospital, spectacles, eyeglasses, contact lenses, eye care products, vision care, ophthalmology, eye treatment, eye specialist, eye clinic, optical products, reading glasses, sunglasses, eye drops, eye accessories">
+<meta name="author" content="Shri Netralay Eye Care Center">
+<link rel="canonical" href="https://www.shrinetralay.com/products.html">
+<meta property="og:title" content="Our Products - Shri Netralay Eye Care Center">
+<meta property="og:description" content="Explore premium eye care products at Shri Netralay, Jafrabad's leading eye hospital.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.shrinetralay.com/products.html">
+
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="https://i.ibb.co/kV5yYCMW/Logo-1.png">
+<link rel="apple-touch-icon" href="https://i.ibb.co/kV5yYCMW/Logo-1.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #1a73e8;
+    --primary-dark: #0d47a1;
+    --secondary: #f8f9fa;
+    --accent: #34a853;
+    --text: #333333;
+    --text-light: #666666;
+    --white: #ffffff;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --transition: all 0.3s ease;
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Inter', system-ui, Arial, Helvetica;
+    background-color: var(--white);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* Header */
+  header {
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo img {
+    height: 60px;
+    width: auto;
+  }
+  
+  .clinic-name {
+    margin-left: 15px;
+  }
+  
+  .clinic-name h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+    margin-bottom: 4px;
+  }
+  
+  .clinic-name p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+  }
+  
+  .nav-menu {
+    display: flex;
+    list-style: none;
+  }
+  
+  .nav-menu li {
+    margin-left: 30px;
+  }
+  
+  .nav-menu a {
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 500;
+    transition: var(--transition);
+    position: relative;
+  }
+  
+  .nav-menu a:hover {
+    color: var(--primary);
+  }
+  
+  .nav-menu a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--primary);
+    transition: var(--transition);
+  }
+  
+  .nav-menu a:hover::after {
+    width: 100%;
+  }
+  
+  .mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--text);
+  }
+  
+  /* Page Header */
+  .page-header {
+    padding: 40px 0 20px;
+    text-align: center;
+    background-color: var(--secondary);
+  }
+  
+  .page-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--primary-dark);
+    margin-bottom: 10px;
+  }
+  
+  .page-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  /* Products Grid */
+  .products-section {
+    padding: 60px 0;
+    background-color: var(--white);
+  }
+  
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+  }
+  
+  .product-card {
+    background-color: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    position: relative;
+  }
+  
+  .product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  }
+  
+  .product-image {
+    height: 200px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .product-image img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    transition: var(--transition);
+  }
+  
+  .product-card:hover .product-image img {
+    transform: scale(1.05);
+  }
+  
+  .product-thumbnails {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+    padding: 0 10px;
+  }
+  
+  .product-thumb {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    border-radius: 6px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  
+  .product-thumb:hover {
+    border-color: var(--primary);
+  }
+  
+  .product-info {
+    padding: 20px;
+  }
+  
+  .product-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--primary-dark);
+  }
+  
+  .product-description {
+    color: var(--text-light);
+    margin-bottom: 15px;
+    height: 42px;
+    overflow: hidden;
+  }
+  
+  .product-prices {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .main-price {
+    font-size: 1rem;
+    color: var(--text-light);
+    text-decoration: line-through;
+  }
+  
+  .offer-price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--accent);
+  }
+  
+  .product-actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: var(--transition);
+    cursor: pointer;
+    border: none;
+    font-size: 0.9rem;
+    flex: 1;
+  }
+  
+  .btn-primary {
+    background-color: var(--primary);
+    color: var(--white);
+  }
+  
+  .btn-primary:hover {
+    background-color: var(--primary-dark);
+  }
+  
+  .btn-secondary {
+    background-color: transparent;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+  }
+  
+  .btn-secondary:hover {
+    background-color: rgba(26, 115, 232, 0.1);
+  }
+  
+  .no-image {
+    height: 200px;
+    background: linear-gradient(135deg, var(--secondary), #e9ecef);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-light);
+    border-radius: 12px 12px 0 0;
+  }
+  
+  /* Product Detail Modal */
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+  }
+  
+  .modal.active {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .modal-content {
+    background-color: var(--white);
+    border-radius: 12px;
+    width: 90%;
+    max-width: 900px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    transform: translateY(20px);
+    transition: var(--transition);
+  }
+  
+  .modal.active .modal-content {
+    transform: translateY(0);
+  }
+  
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .modal-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary-dark);
+    margin: 0;
+  }
+  
+  .close-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--text-light);
+    transition: var(--transition);
+  }
+  
+  .close-btn:hover {
+    color: var(--text);
+  }
+  
+  .modal-body {
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+  
+  .modal-image-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .modal-main-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: contain;
+    border-radius: 8px;
+  }
+  
+  .modal-thumbnails {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .modal-thumb {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    border-radius: 6px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: var(--transition);
+  }
+  
+  .modal-thumb:hover, .modal-thumb.active {
+    border-color: var(--primary);
+  }
+  
+  .modal-details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .modal-description {
+    color: var(--text-light);
+    line-height: 1.6;
+  }
+  
+  .modal-prices {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 10px 0;
+  }
+  
+  .modal-main-price {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    text-decoration: line-through;
+  }
+  
+  .modal-offer-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent);
+  }
+  
+  .modal-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .btn-whatsapp {
+    background-color: var(--accent);
+    color: var(--white);
+    flex: 2;
+  }
+  
+  .btn-whatsapp:hover {
+    background-color: #2d9247;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: var(--primary-dark);
+    color: var(--white);
+    padding: 40px 0 20px;
+  }
+  
+  .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+  }
+  
+  .footer-section h3 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+  }
+  
+  .footer-section h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 2px;
+    background-color: var(--accent);
+  }
+  
+  .footer-section p {
+    margin-bottom: 15px;
+    opacity: 0.9;
+  }
+  
+  .footer-links {
+    list-style: none;
+  }
+  
+  .footer-links li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-links a {
+    color: var(--white);
+    text-decoration: none;
+    opacity: 0.9;
+    transition: var(--transition);
+  }
+  
+  .footer-links a:hover {
+    opacity: 1;
+    padding-left: 5px;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.9rem;
+    opacity: 0.8;
+  }
+  
+  /* Mobile Navigation */
+  .mobile-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--white);
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    z-index: 1000;
+  }
+  
+  .mobile-nav-menu {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    padding: 10px 0;
+  }
+  
+  .mobile-nav-item {
+    text-align: center;
+  }
+  
+  .mobile-nav-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-light);
+    font-size: 0.8rem;
+    transition: var(--transition);
+  }
+  
+  .mobile-nav-link.active,
+  .mobile-nav-link:hover {
+    color: var(--primary);
+  }
+  
+  .mobile-nav-icon {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+  }
+  
+  /* Loading State */
+  .loading {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 40px;
+    color: var(--text-light);
+  }
+  
+  .error {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 40px;
+    color: #e74c3c;
+    background-color: #ffeaea;
+    border-radius: 8px;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 992px) {
+    .page-title {
+      font-size: 2rem;
+    }
+    
+    .modal-body {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    
+    .modal-main-image {
+      max-height: 300px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .header-container {
+      padding: 10px 0;
+    }
+    
+    .logo img {
+      height: 50px;
+    }
+    
+    .clinic-name h1 {
+      font-size: 1.2rem;
+    }
+    
+    .nav-menu {
+      display: none;
+    }
+    
+    .mobile-menu-btn {
+      display: block;
+    }
+    
+    .mobile-nav {
+      display: block;
+    }
+    
+    .products-section {
+      padding: 40px 0;
+    }
+    
+    .products-grid {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    
+    .modal-content {
+      width: 95%;
+    }
+    
+    .modal-header, .modal-body {
+      padding: 20px;
+    }
+    
+    .modal-actions {
+      flex-direction: column;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .container {
+      padding: 0 15px;
+    }
+    
+    .page-title {
+      font-size: 1.8rem;
+    }
+    
+    .products-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .clinic-name {
+      margin-left: 10px;
+    }
+    
+    .clinic-name h1 {
+      font-size: 1rem;
+    }
+    
+    .clinic-name p {
+      font-size: 0.8rem;
+    }
+  }
+</style>
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <div class="container header-container">
+      <div class="logo">
+        <img src="https://i.ibb.co/kV5yYCMW/Logo-1.png" alt="Shri Netralay Logo">
+        <div class="clinic-name">
+          <h1>Shri Netralay</h1>
+          <p>Vishal Eye Care Center, Jafrabad</p>
+        </div>
+      </div>
+      <nav class="desktop-nav">
+        <ul class="nav-menu">
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="products.html" class="active">PRODUCTS</a></li>
+          <li><a href="about.html">ABOUT</a></li>
+          <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+      </nav>
+      <button class="mobile-menu-btn">☰</button>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1 class="page-title">Our Products</h1>
+      <p class="page-subtitle">Premium eye care products and accessories for your vision health</p>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section class="products-section">
+    <div class="container">
+      <div id="productGrid" class="products-grid">
+        <!-- Products will be loaded here dynamically -->
+        <div class="loading">Loading products...</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Detail Modal -->
+  <div id="productModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="modalTitle" class="modal-title">Product Details</h2>
+        <button id="closeModal" class="close-btn">×</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-image-container">
+          <img id="modalMainImg" class="modal-main-image" src="" alt="Product Image">
+          <div id="modalThumbs" class="modal-thumbnails">
+            <!-- Thumbnails will be added here -->
+          </div>
+        </div>
+        <div class="modal-details">
+          <p id="modalDesc" class="modal-description">Product description will appear here.</p>
+          <div class="modal-prices">
+            <span id="modalMainPrice" class="modal-main-price"></span>
+            <span id="modalOfferPrice" class="modal-offer-price"></span>
+          </div>
+          <div class="modal-actions">
+            <a id="modalWhats" class="btn btn-whatsapp" href="#" target="_blank">Buy on WhatsApp</a>
+            <button class="btn btn-secondary" id="closeModalBtn">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Shri Netralay</h3>
+          <p>Vishal Eye Care Center, Jafrabad</p>
+          <p>Providing comprehensive eye care services with advanced technology and experienced specialists.</p>
+          <p>Your vision is our priority.</p>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="product.html">Products</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Contact Us</h3>
+          <p>Phone: <a href="tel:+918605640476">+91 86056 40476</a></p>
+          <p>Email: info@shrinetralay.com</p>
+          <p>Address: Jafrabad, Your City</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2023 Shri Netralay - Vishal Eye Care Center. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile Navigation -->
+  <nav class="mobile-nav">
+    <ul class="mobile-nav-menu">
+      <li class="mobile-nav-item">
+        <a href="index.html" class="mobile-nav-link">
+          <span class="mobile-nav-icon">🏠</span>
+          <span>Home</span>
+        </a>
+      </li>
+      <li class="mobile-nav-item">
+        <a href="product.html" class="mobile-nav-link active">
+          <span class="mobile-nav-icon">🛍️</span>
+          <span>Products</span>
+        </a>
+      </li>
+      <li class="mobile-nav-item">
+        <a href="about.html" class="mobile-nav-link">
+          <span class="mobile-nav-icon">ℹ️</span>
+          <span>About</span>
+        </a>
+      </li>
+      <li class="mobile-nav-item">
+        <a href="contact.html" class="mobile-nav-link">
+          <span class="mobile-nav-icon">📞</span>
+          <span>Contact</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <script>
+    /* ---------- CONFIG ---------- */
+    const SUPABASE_URL = "https://dqaelbbhhsrstzwpevuq.supabase.co";
+    const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRxYWVsYmJoaHNyc3R6d3BldnVxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjMxMzU2NDgsImV4cCI6MjA3ODcxMTY0OH0.nJNFC9i1nFRa1WnCFznylOZL9oIbXm6oafE8-qlIf5w";
+    const BUCKET = "products";
+    const WHATSAPP_NUMBER = "8605640476";
+    const GRID_EL = document.getElementById('productGrid');
+    /* ---------------------------- */
+
+    /* Helper: REST request to Supabase REST v1 */
+    async function rest(path, opts = {}) {
+      const url = `${SUPABASE_URL}/rest/v1/${path}`;
+      const headers = Object.assign({
+        'apikey': SUPABASE_ANON_KEY,
+        'Authorization': 'Bearer ' + SUPABASE_ANON_KEY,
+        'Accept': 'application/json'
+      }, opts.headers || {});
+      const res = await fetch(url, Object.assign({ method: opts.method || 'GET', headers }, opts.body ? { body: opts.body } : {}));
+      if (!res.ok) {
+        const txt = await res.text().catch(()=>null);
+        throw new Error(`REST error ${res.status}: ${txt || res.statusText}`);
+      }
+      const ct = res.headers.get('content-type') || '';
+      if (res.status === 204) return null;
+      return ct.includes('application/json') ? res.json() : res.text();
+    }
+
+    /* Build public URL if stored image is a path instead of full URL */
+    function buildPublicUrl(maybePath) {
+      if (!maybePath) return null;
+      // If already a full URL, return it
+      if (maybePath.startsWith('http://') || maybePath.startsWith('https://')) return maybePath;
+      // If path starts with /storage or storage/v1, try to normalize
+      const cleaned = maybePath.replace(/^\/+/, '');
+      return `${SUPABASE_URL}/storage/v1/object/public/${BUCKET}/${encodeURIComponent(cleaned)}`;
+    }
+
+    /* Load products and images, then render */
+    async function loadProducts() {
+      GRID_EL.innerHTML = '<div class="loading">Loading products…</div>';
+      try {
+        // Fetch products
+        const products = await rest('products?select=*&order=id.desc');
+        if (!Array.isArray(products) || products.length === 0) {
+          GRID_EL.innerHTML = '<div class="loading">No products available</div>';
+          return;
+        }
+
+        // Get product ids and fetch images in a single call
+        const ids = products.map(p => p.id).join(',');
+        let images = [];
+        if (ids) {
+          images = await rest(`product_images?select=*&product_id=in.(${ids})`);
+        }
+
+        const grouped = {};
+        (images || []).forEach(img => {
+          if (!grouped[img.product_id]) grouped[img.product_id] = [];
+          grouped[img.product_id].push(img.image_url);
+        });
+
+        // render cards
+        GRID_EL.innerHTML = '';
+        products.forEach(prod => {
+          const imgs = grouped[prod.id] || [];
+
+          // ensure we have usable public URLs
+          const publicImgs = imgs.map(u => buildPublicUrl(u)).filter(Boolean);
+
+          const card = document.createElement('div');
+          card.className = 'product-card';
+
+          // main image (first) or placeholder
+          let mainHtml = '';
+          if (publicImgs.length) {
+            mainHtml = `<div class="product-image"><img src="${publicImgs[0]}" alt="${escapeHtml(prod.name)}"></div>`;
+          } else {
+            mainHtml = `<div class="no-image">No image available</div>`;
+          }
+
+          // thumbnails row
+          let thumbRow = '';
+          if (publicImgs.length > 1) {
+            const minis = publicImgs.slice(0,3).map(u => `<img class="product-thumb" src="${u}" alt="thumb">`).join('');
+            thumbRow = `<div class="product-thumbnails">${minis}</div>`;
+          }
+
+          card.innerHTML = `
+            ${mainHtml}
+            <div class="product-info">
+              <h3 class="product-name">${escapeHtml(prod.name)}</h3>
+              <p class="product-description">${escapeHtml(prod.description || 'No description available')}</p>
+              <div class="product-prices">
+                <span class="main-price">₹${prod.main_price ?? ''}</span>
+                <span class="offer-price">₹${prod.offer_price ?? ''}</span>
+              </div>
+              ${thumbRow}
+              <div class="product-actions">
+                <button class="btn btn-primary" data-id="${prod.id}">Buy Now</button>
+                <button class="btn btn-secondary" data-id="view-${prod.id}">View Details</button>
+              </div>
+            </div>
+          `;
+
+          GRID_EL.appendChild(card);
+
+          // attach buy handler
+          const buyBtn = card.querySelector('.btn-primary');
+          buyBtn.addEventListener('click', (ev) => {
+            ev.preventDefault();
+            // find product details for message
+            const text = encodeURIComponent(
+              `Hello, I want to buy:\n\nProduct: ${prod.name}\nOffer Price: ₹${prod.offer_price}\nMain Price: ₹${prod.main_price}\n\nPlease share ordering details.`
+            );
+            // use wa.me with provided number
+            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, '_blank');
+          });
+
+          // attach view/detail handler (open modal)
+          const viewBtn = card.querySelector(`button[data-id="view-${prod.id}"]`);
+          viewBtn.addEventListener('click', ()=> openModal(prod, publicImgs));
+        });
+
+      } catch (err) {
+        console.error(err);
+        GRID_EL.innerHTML = `<div class="error">Error loading products: ${escapeHtml(String(err.message||err))}</div>`;
+      }
+    }
+
+    /* Modal logic */
+    const modal = document.getElementById('productModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalMainImg = document.getElementById('modalMainImg');
+    const modalThumbs = document.getElementById('modalThumbs');
+    const modalDesc = document.getElementById('modalDesc');
+    const modalMainPrice = document.getElementById('modalMainPrice');
+    const modalOfferPrice = document.getElementById('modalOfferPrice');
+    const modalWhats = document.getElementById('modalWhats');
+    
+    document.getElementById('closeModal').addEventListener('click', ()=> modal.classList.remove('active'));
+    document.getElementById('closeModalBtn').addEventListener('click', ()=> modal.classList.remove('active'));
+
+    function openModal(prod, images) {
+      modalTitle.textContent = prod.name;
+      modalDesc.textContent = prod.description || 'No description available';
+      modalMainPrice.textContent = prod.main_price ? `₹${prod.main_price}` : '';
+      modalOfferPrice.textContent = prod.offer_price ? `₹${prod.offer_price}` : '';
+      
+      if (images && images.length) {
+        modalMainImg.src = images[0];
+        modalThumbs.innerHTML = images.map((u, i) => 
+          `<img src="${u}" class="modal-thumb ${i === 0 ? 'active' : ''}" data-i="${i}" alt="thumb">`
+        ).join('');
+        
+        // attach thumb click
+        Array.from(modalThumbs.querySelectorAll('img')).forEach(im => {
+          im.addEventListener('click', (e) => {
+            modalMainImg.src = e.currentTarget.src;
+            // Update active state
+            Array.from(modalThumbs.querySelectorAll('img')).forEach(img => img.classList.remove('active'));
+            e.currentTarget.classList.add('active');
+          });
+        });
+      } else {
+        modalMainImg.src = '';
+        modalMainImg.style.background = '#f8f9fa';
+        modalThumbs.innerHTML = '';
+      }
+      
+      modalWhats.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(`Hello, I want to buy: ${prod.name} - Offer: ₹${prod.offer_price}`)}`;
+      modal.classList.add('active');
+    }
+
+    /* small escape helper */
+    function escapeHtml(s=''){ 
+      return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); 
+    }
+
+    /* init */
+    loadProducts();
+  </script>
+</body>
+</html>
