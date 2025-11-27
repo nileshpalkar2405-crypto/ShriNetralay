@@ -180,6 +180,9 @@
     box-shadow: var(--shadow);
     transition: var(--transition);
     position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
   }
   
   .product-card:hover {
@@ -187,51 +190,68 @@
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
   }
   
-  .product-image {
-    height: 200px;
+  .product-image-container {
+    height: 220px;
     overflow: hidden;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: var(--secondary);
   }
   
-  .product-image img {
+  .product-image-slider {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease;
+  }
+  
+  .product-image-slide {
+    min-width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .product-image-slide img {
     max-width: 100%;
     max-height: 100%;
     width: auto;
     height: auto;
     object-fit: contain;
-    transition: var(--transition);
   }
   
-  .product-card:hover .product-image img {
-    transform: scale(1.05);
-  }
-  
-  .product-thumbnails {
+  .product-slider-nav {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
     display: flex;
-    gap: 8px;
-    margin-top: 10px;
-    padding: 0 10px;
+    justify-content: center;
+    gap: 6px;
   }
   
-  .product-thumb {
-    width: 50px;
-    height: 50px;
-    object-fit: contain;
-    border-radius: 6px;
-    border: 2px solid transparent;
+  .product-slider-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
     cursor: pointer;
     transition: var(--transition);
   }
   
-  .product-thumb:hover {
-    border-color: var(--primary);
+  .product-slider-dot.active {
+    background-color: var(--white);
+    transform: scale(1.2);
   }
   
   .product-info {
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
   }
   
   .product-name {
@@ -239,13 +259,19 @@
     font-weight: 600;
     margin-bottom: 10px;
     color: var(--primary-dark);
+    min-height: 2.8rem;
+    display: flex;
+    align-items: center;
   }
   
   .product-description {
     color: var(--text-light);
     margin-bottom: 15px;
-    height: 42px;
+    min-height: 3.6rem;
     overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
   }
   
   .product-prices {
@@ -270,6 +296,7 @@
   .product-actions {
     display: flex;
     gap: 10px;
+    margin-top: auto;
   }
   
   .btn {
@@ -285,6 +312,7 @@
     border: none;
     font-size: 0.9rem;
     flex: 1;
+    min-height: 42px;
   }
   
   .btn-primary {
@@ -307,7 +335,7 @@
   }
   
   .no-image {
-    height: 200px;
+    height: 220px;
     background: linear-gradient(135deg, var(--secondary), #e9ecef);
     display: flex;
     align-items: center;
@@ -774,7 +802,7 @@
         </div>
         <div class="footer-section">
           <h3>Contact Us</h3>
-          <p>Phone: <a href="tel:+918605640476">+91 86056 40476</a></p>
+          <p>Phone: <a href="tel:+918605640476">+918605640476</a></p>
           <p>Email: info@shrinetralay.com</p>
           <p>Address: Jafrabad, Your City</p>
         </div>
@@ -820,7 +848,7 @@
     const SUPABASE_URL = "https://dqaelbbhhsrstzwpevuq.supabase.co";
     const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRxYWVsYmJoaHNyc3R6d3BldnVxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjMxMzU2NDgsImV4cCI6MjA3ODcxMTY0OH0.nJNFC9i1nFRa1WnCFznylOZL9oIbXm6oafE8-qlIf5w";
     const BUCKET = "products";
-    const WHATSAPP_NUMBER = "8605640476";
+    const WHATSAPP_NUMBER = "918605640476"; // Fixed: Added country code and kept as string
     const GRID_EL = document.getElementById('productGrid');
     /* ---------------------------- */
 
@@ -887,19 +915,29 @@
           const card = document.createElement('div');
           card.className = 'product-card';
 
-          // main image (first) or placeholder
+          // main image slider or placeholder
           let mainHtml = '';
           if (publicImgs.length) {
-            mainHtml = `<div class="product-image"><img src="${publicImgs[0]}" alt="${escapeHtml(prod.name)}"></div>`;
+            const slides = publicImgs.map(u => 
+              `<div class="product-image-slide"><img src="${u}" alt="${escapeHtml(prod.name)}"></div>`
+            ).join('');
+            
+            const dots = publicImgs.map((_, i) => 
+              `<div class="product-slider-dot ${i === 0 ? 'active' : ''}" data-index="${i}"></div>`
+            ).join('');
+            
+            mainHtml = `
+              <div class="product-image-container">
+                <div class="product-image-slider">
+                  ${slides}
+                </div>
+                <div class="product-slider-nav">
+                  ${dots}
+                </div>
+              </div>
+            `;
           } else {
             mainHtml = `<div class="no-image">No image available</div>`;
-          }
-
-          // thumbnails row
-          let thumbRow = '';
-          if (publicImgs.length > 1) {
-            const minis = publicImgs.slice(0,3).map(u => `<img class="product-thumb" src="${u}" alt="thumb">`).join('');
-            thumbRow = `<div class="product-thumbnails">${minis}</div>`;
           }
 
           card.innerHTML = `
@@ -911,7 +949,6 @@
                 <span class="main-price">₹${prod.main_price ?? ''}</span>
                 <span class="offer-price">₹${prod.offer_price ?? ''}</span>
               </div>
-              ${thumbRow}
               <div class="product-actions">
                 <button class="btn btn-primary" data-id="${prod.id}">Buy Now</button>
                 <button class="btn btn-secondary" data-id="view-${prod.id}">View Details</button>
@@ -921,6 +958,11 @@
 
           GRID_EL.appendChild(card);
 
+          // Initialize image slider if multiple images
+          if (publicImgs.length > 1) {
+            initImageSlider(card, publicImgs.length);
+          }
+
           // attach buy handler
           const buyBtn = card.querySelector('.btn-primary');
           buyBtn.addEventListener('click', (ev) => {
@@ -929,7 +971,7 @@
             const text = encodeURIComponent(
               `Hello, I want to buy:\n\nProduct: ${prod.name}\nOffer Price: ₹${prod.offer_price}\nMain Price: ₹${prod.main_price}\n\nPlease share ordering details.`
             );
-            // use wa.me with provided number
+            // use wa.me with provided number - FIXED: Using the properly formatted number
             window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, '_blank');
           });
 
@@ -942,6 +984,62 @@
         console.error(err);
         GRID_EL.innerHTML = `<div class="error">Error loading products: ${escapeHtml(String(err.message||err))}</div>`;
       }
+    }
+
+    /* Initialize image slider for product cards */
+    function initImageSlider(card, imageCount) {
+      const slider = card.querySelector('.product-image-slider');
+      const dots = card.querySelectorAll('.product-slider-dot');
+      let currentSlide = 0;
+      let slideInterval;
+      
+      // Function to go to a specific slide
+      function goToSlide(index) {
+        currentSlide = index;
+        slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+        
+        // Update active dot
+        dots.forEach((dot, i) => {
+          dot.classList.toggle('active', i === currentSlide);
+        });
+      }
+      
+      // Set up click events for dots
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+          goToSlide(index);
+          resetInterval();
+        });
+      });
+      
+      // Auto slide function
+      function nextSlide() {
+        currentSlide = (currentSlide + 1) % imageCount;
+        goToSlide(currentSlide);
+      }
+      
+      // Start auto sliding
+      function startInterval() {
+        slideInterval = setInterval(nextSlide, 3000);
+      }
+      
+      // Reset interval on user interaction
+      function resetInterval() {
+        clearInterval(slideInterval);
+        startInterval();
+      }
+      
+      // Pause on hover
+      card.addEventListener('mouseenter', () => {
+        clearInterval(slideInterval);
+      });
+      
+      card.addEventListener('mouseleave', () => {
+        startInterval();
+      });
+      
+      // Start the auto sliding
+      startInterval();
     }
 
     /* Modal logic */
@@ -997,5 +1095,4 @@
     loadProducts();
   </script>
 </body>
-
 </html>
